@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 72691964}
   - component: {fileID: 72691963}
   - component: {fileID: 72691962}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: testPlatorm (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 705913339}
   - component: {fileID: 705913338}
   - component: {fileID: 705913337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: testPlatorm (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   gameInput: {fileID: 1909450340}
-  moveSpeed: 7
+  baseMoveSpeed: 7
+  apexHeight: 4.5
+  apexTime: 0.5
 --- !u!1 &748850687
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +706,7 @@ GameObject:
   - component: {fileID: 1008766970}
   - component: {fileID: 1008766969}
   - component: {fileID: 1008766968}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: testPlatorm (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -842,7 +844,7 @@ GameObject:
   - component: {fileID: 1361929400}
   - component: {fileID: 1361929399}
   - component: {fileID: 1361929398}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: testPlatorm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1013,7 +1015,7 @@ GameObject:
   - component: {fileID: 1610662860}
   - component: {fileID: 1610662859}
   - component: {fileID: 1610662858}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
