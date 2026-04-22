@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class AC_PlayerAnimation : MonoBehaviour
 {
+    // [SerializeField] private GameInput gameInput;
     [SerializeField] private Animator animator;
     private string currentAnim;
 
@@ -18,6 +19,7 @@ public class AC_PlayerAnimation : MonoBehaviour
     {
         if (Keyboard.current.wKey.wasPressedThisFrame)
         {
+            Debug.Log("Success");
             SwitchAnimation("FacingBack");
         }
             
@@ -28,6 +30,7 @@ public class AC_PlayerAnimation : MonoBehaviour
             
         if (Keyboard.current.aKey.wasPressedThisFrame)
         {
+            Debug.Log("Success");
             SwitchAnimation("FacingLeft");
         }
             
@@ -43,7 +46,7 @@ public class AC_PlayerAnimation : MonoBehaviour
         animator.SetBool(currentAnim, false);
         animator.SetBool(newAnim, true);
         currentAnim = newAnim;
-        // Debug.Log(currentAnim);
+        Debug.Log(currentAnim);
     }
 
 }

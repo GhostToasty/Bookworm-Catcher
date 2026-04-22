@@ -194,7 +194,8 @@ GameObject:
   - component: {fileID: 2549679636068979994}
   - component: {fileID: 164896049277389635}
   - component: {fileID: 8870077666049657432}
-  - component: {fileID: 2225439702497066304}
+  - component: {fileID: 2868015634287885610}
+  - component: {fileID: 7037016030183435996}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -308,7 +309,7 @@ MonoBehaviour:
   groundLevel: 0
   leftWall: 0
   rightWall: 18
---- !u!95 &2225439702497066304
+--- !u!95 &2868015634287885610
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -330,6 +331,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7037016030183435996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7135887414987808262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2776a4b774c06604287a8f05094fbec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AC_PlayerAnimation
+  animator: {fileID: 2868015634287885610}
 --- !u!1 &8332108810703377589
 GameObject:
   m_ObjectHideFlags: 0
