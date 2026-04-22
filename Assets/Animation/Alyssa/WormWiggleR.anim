@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FacingFront
+  m_Name: WormWiggleR
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 6463923980696086678, guid: 000e718488572f640b59e3dea1673207, type: 3}
+      value: {fileID: -8514122607721415610, guid: b3ab1ee5a69276e418740ec58a9baf19, type: 3}
+    - time: 0.16666667
+      value: {fileID: -7903038568105789177, guid: b3ab1ee5a69276e418740ec58a9baf19, type: 3}
+    - time: 0.33333334
+      value: {fileID: -5259737646794363936, guid: b3ab1ee5a69276e418740ec58a9baf19, type: 3}
     attribute: m_Sprite
-    path: PlayerVisual/Sprite
+    path: Worm Visual
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -35,7 +39,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 4000875627
+      path: 491744665
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -44,13 +48,15 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 6463923980696086678, guid: 000e718488572f640b59e3dea1673207, type: 3}
+    - {fileID: -8514122607721415610, guid: b3ab1ee5a69276e418740ec58a9baf19, type: 3}
+    - {fileID: -7903038568105789177, guid: b3ab1ee5a69276e418740ec58a9baf19, type: 3}
+    - {fileID: -5259737646794363936, guid: b3ab1ee5a69276e418740ec58a9baf19, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.35000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
