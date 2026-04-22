@@ -30,6 +30,7 @@ public class WormPatrol : MonoBehaviour
         // Changes direction when ground ends
         if (groundInfo.collider == false)
         {
+            Debug.Log("Floor not detected");
             if (movingRight)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
@@ -42,20 +43,20 @@ public class WormPatrol : MonoBehaviour
         }
 
         // Changes direction when it detects a barrier ahead
-        if (pathAheadInfo.collider != false)
-        {
-            if (pathAheadInfo.collider.CompareTag("Barrier"))
-            {
-                if (movingRight)
-                {
-                    transform.eulerAngles = new Vector3(0, -180, 0);
-                    movingRight = false;
-                } else
-                {
-                    transform.eulerAngles = new Vector3(0, 0, 0);
-                    movingRight = true;
-                }
-            }
-        }
+        // if (pathAheadInfo.collider != false)
+        // {
+        //     if (pathAheadInfo.collider.CompareTag("Barrier"))
+        //     {
+        //         if (movingRight)
+        //         {
+        //             transform.eulerAngles = new Vector3(0, -180, 0);
+        //             movingRight = false;
+        //         } else
+        //         {
+        //             transform.eulerAngles = new Vector3(0, 0, 0);
+        //             movingRight = true;
+        //         }
+        //     }
+        // }
     }
 }
