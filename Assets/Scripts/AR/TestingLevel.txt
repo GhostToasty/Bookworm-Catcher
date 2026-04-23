@@ -1,8 +1,33 @@
 
-     xxxxxxxx
 
-xxxxxx
 
-            xxxxxx
+     t
+     u                      w
+     u          lxxxxxxxxxxxxxxxxxxxxxxr
+     u
+     u
+     u
+     u
+lxr  u
+     u
+     u
+     u                  w
+     u              lxxxxxxxr
+     u              
+     b
 
-xxxxxxxxxxxxxxxxxxxxxx
+            lxr                     w
+  w                             lxxxxxxr
+ lxr                    t
+                        u
+                        u
+                        u
+         w              u
+     lxxxxxxr           u
+                        u
+  w                     u
+lxxxr                   u     w
+    t                   u   lxxr
+    u                   u   
+    b                   b
+lxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxr

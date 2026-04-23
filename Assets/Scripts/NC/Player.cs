@@ -5,7 +5,8 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Player : MonoBehaviour, IBookwormParent
 {
-    //public static Player Instance { get; private set; }  //property for singleton pattern
+    public event EventHandler OnCaughtBookworm;
+    public static Player Instance { get; private set; }  //property for singleton pattern
     
     [SerializeField] private GameInput gameInput;
     [SerializeField] private Transform bookwormHoldPoint;
@@ -19,6 +20,28 @@ public class Player : MonoBehaviour, IBookwormParent
     [SerializeField] private float groundLevel;
     [SerializeField] private float leftWall = -9f;
     [SerializeField] private float rightWall = 9f;
+
+    //---------Moises---------
+    public enum State
+    {
+        Idle,
+        Moving,
+        Climbing,
+        Falling,
+        SingleJump,
+        DoubleJump,
+        Dashing
+    }
+
+    public event EventHandler SingleJumpActivated;
+    public event EventHandler DoubleJumpActivated;
+    public event EventHandler LandingActivated;
+    //public event EventHandler WalkingActivated;
+
+    private Vector2 previousPosition;
+    private State currentState;
+    private State previousState;
+    //------------------------
 
     private bool _isGrounded;
     private bool _canJump;
@@ -35,13 +58,13 @@ public class Player : MonoBehaviour, IBookwormParent
     
     private void Awake()
     {
-        /*
+        
         if (Instance != null)
         {
             Debug.LogError("There are multiple instances of the player");
         }
         Instance = this;
-        */
+        
     }
     
     void Start()
@@ -49,10 +72,32 @@ public class Player : MonoBehaviour, IBookwormParent
         gameInput.OnJump += GameInput_OnJump;
         gameInput.OnDash += GameInput_OnDash;
         gameInput.OnDrop += GameInput_OnDrop;
+
+        //Moises---------
+        previousPosition = transform.position;
+        previousState = State.Idle;
+        currentState = State.Idle;
+        //---------------
     }
 
     // Update is called once per frame
-    void Update()
+    
+    /*
+     * Notes:
+     * While falling too fast you sink into the platform
+     * After sinking, the y-level that you sink to becomes the new y-level for future jumps on that platform
+     * 
+     * Proposed fix:
+     * Reset the y-position of the player to be ON level with the platform
+     * once it reaches below the y-threshold of the platform
+     *
+     * Temp changes / fixes for level parser implimentation:
+     * I had to change the Raycast to be longer to scale with the larger size of the player sprite
+     * I added a colored Raycast for debugging, so we know the length of the Physics2D.Raycast
+     * 
+    */
+
+    void FixedUpdate()
     {
         float currentMoveSpeed = baseMoveSpeed;
         //handle dash timer
@@ -70,7 +115,8 @@ public class Player : MonoBehaviour, IBookwormParent
         //check for on ladder
         _onLadder = Physics2D.Raycast(transform.position, Vector2.down, .05f, LayerMask.GetMask("Ladder"));
         //check for on ground/jump capability
-        _isGrounded = Physics2D.Raycast(transform.position, Vector3.down, .005f, LayerMask.GetMask("GroundLayer"));
+        _isGrounded = Physics2D.Raycast(transform.position, Vector3.down, 1.01f, LayerMask.GetMask("GroundLayer"));
+        Debug.DrawRay(transform.position, Vector2.down * 1.01f, Color.red);
         _canJump = _isGrounded || _onLadder;
         
         //x movement things
@@ -110,8 +156,14 @@ public class Player : MonoBehaviour, IBookwormParent
         
         transform.position += new Vector3(deltaX, deltaY, 0);
 
-        
+        Debug.Log(_isGrounded);
         ClampPosition();
+
+        //---------Moises---------
+        UpdatePlayerState();
+        previousPosition = transform.position;
+        previousState = currentState;
+        //------------------------
     }
     
     
@@ -124,14 +176,23 @@ public class Player : MonoBehaviour, IBookwormParent
     {
         _dashActive = true;
         _dashTimer = 0f;
+
+        //Moises---------
+        currentState = State.Dashing;
+        //---------------
     }
 
     private void GameInput_OnJump(object sender, EventArgs e)
     {
+        Debug.Log("Jump");
         if (_canJump)
         {
             //Debug.Log("Player_Jump");
             _jumpVelocity = 2f * apexHeight / apexTime;
+            //Moises---------
+            currentState = State.SingleJump;
+            SingleJumpActivated?.Invoke(this, EventArgs.Empty);
+            //---------------
             _canJump = false;
             _canDoubleJump = true;
         }
@@ -139,6 +200,10 @@ public class Player : MonoBehaviour, IBookwormParent
         {
             //Debug.Log("Player_DoubleJump");
             _jumpVelocity = 2f * apexHeight / apexTime;
+            //Moises---------
+            currentState = State.DoubleJump;
+            DoubleJumpActivated?.Invoke(this, EventArgs.Empty);
+            //---------------
             _canJump = false;
             _canDoubleJump = false;
         }
@@ -182,7 +247,7 @@ public class Player : MonoBehaviour, IBookwormParent
         if (_bookworm != null)
         {
             //TODO: Finish Player SetBookworm
-            //OnPickedSomething?.Invoke(this, EventArgs.Empty);
+            OnCaughtBookworm?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -200,5 +265,53 @@ public class Player : MonoBehaviour, IBookwormParent
     {
         return _bookworm != null;
     }
+
+    //---------Moises---------
+    private void UpdatePlayerState()
+    {
+        //If player is changing direction
+        if((Vector2)transform.position != previousPosition)
+        {
+            //If Player is moving along a ladder
+            if(_onLadder)
+            {
+                currentState = State.Climbing;
+            }
+            //If player is moving downwards, but not on ladder or on ground
+            else if (!_isGrounded && !_onLadder && (transform.position.y < previousPosition.y))
+            {
+                currentState = State.Falling;
+            }
+            //If player is moving left or right, without dashing
+            else if ((transform.position.x != previousPosition.x) && (transform.position.y == previousPosition.y) && !_dashActive)
+            {
+                //If going from falling to walking
+                if (previousState == State.Falling)
+                {
+                    LandingActivated?.Invoke(this, EventArgs.Empty);
+                }
+                //WalkingActivated?.Invoke(this, EventArgs.Empty);
+                currentState = State.Moving;
+            }
+        }
+        //If player is not changing direction
+        else
+        {
+            //If going from falling to Idle
+            if (previousState == State.Falling)
+            {
+                LandingActivated?.Invoke(this, EventArgs.Empty);
+            }
+            currentState = State.Idle;
+        }
+
+        //Debug.Log("Current State: " + currentState);
+    }
+
+    public bool isWalking()
+    {
+        return currentState == State.Moving;
+    }
+    //-------------------------
     
 }
