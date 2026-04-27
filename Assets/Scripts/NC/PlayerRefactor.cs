@@ -135,10 +135,15 @@ public class PlayerRefactor : MonoBehaviour, IBookwormParent
         float yVelocity = _jumpVelocity + _verticalVelocity;
         float deltaY = yVelocity * Time.deltaTime;
         
+        //Debug.Log("Dropping: " + _dropping);
         if (_dropping)
         {
-            deltaY = -dropMoveSpeed * gravity * Time.deltaTime;
-            //_dropping = false;
+            float dropVelocity = -dropMoveSpeed * gravity * Time.deltaTime;
+            deltaY = dropVelocity;
+            if (_isGrounded && !Mathf.Approximately(deltaY, dropVelocity))
+            {
+                _dropping = false;
+            }
         }
         
         Vector3 deltaPosition = new Vector3(deltaX, deltaY, 0);
@@ -168,7 +173,7 @@ public class PlayerRefactor : MonoBehaviour, IBookwormParent
     
     private void GameInput_OnDrop(object sender, EventArgs e)
     {
-        Debug.Log("PlayerRefactor_Dropping");
+        //Debug.Log("PlayerRefactor_Dropping");
         _dropping =  true;
     }
 

@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="515b1211-564e-4bf5-9b47-24703bcafae7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookworm-Catcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookworm-Catcher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NC_Prefabs/BaseBlockRefactor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NC_Prefabs/BaseBlockRefactor.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NC_Prefabs/LeftBaseBlockRefactor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NC_Prefabs/LeftBaseBlockRefactor.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NC_Prefabs/RightBaseBlockRefactor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NC_Prefabs/RightBaseBlockRefactor.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/NC/NC_WorkingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/NC/NC_WorkingScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/NC/PlayerOneWayPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NC/PlayerOneWayPlatform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NC/PlayerRefactor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NC/PlayerRefactor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +122,7 @@
       <workItem from="1776987296935" duration="393000" />
       <workItem from="1777142882010" duration="2654000" />
       <workItem from="1777147129987" duration="7042000" />
-      <workItem from="1777312050194" duration="4511000" />
+      <workItem from="1777312050194" duration="7294000" />
     </task>
     <servers />
   </component>

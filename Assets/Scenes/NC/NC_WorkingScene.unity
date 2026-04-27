@@ -198,6 +198,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7135887414987808262, guid: 76a088a1d98eaee44bc7f0ab625acbc6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1873248899}
+    - targetCorrespondingSourceObject: {fileID: 7135887414987808262, guid: 76a088a1d98eaee44bc7f0ab625acbc6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1873248906}
   m_SourcePrefab: {fileID: 100100000, guid: 76a088a1d98eaee44bc7f0ab625acbc6, type: 3}
 --- !u!1 &881599838
 GameObject:
@@ -874,11 +877,30 @@ MonoBehaviour:
   groundLevel: 0
   leftWall: 0
   rightWall: 42
+--- !u!70 &1873248904 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2549679636068979994, guid: 76a088a1d98eaee44bc7f0ab625acbc6, type: 3}
+  m_PrefabInstance: {fileID: 51874154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1873248905 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2746153665422607754, guid: 76a088a1d98eaee44bc7f0ab625acbc6, type: 3}
   m_PrefabInstance: {fileID: 51874154}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1873248906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873248891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef748421296f4c94c87f64231db43f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerOneWayPlatform
+  _playerCollider: {fileID: 1873248904}
+  _player: {fileID: 1873248899}
 --- !u!1 &1914852543
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
         if (_player.IsDropping())
         {
             Debug.Log("Platform_Update_Dropping");
+            Debug.Log(_currentOneWayPlatform);
             if (_currentOneWayPlatform != null)
             {
                 StartCoroutine(DisableCollision());
@@ -24,6 +25,12 @@ public class PlayerOneWayPlatform : MonoBehaviour
         }
     }
 
+    /*
+     * NOTES:
+     *      The player doesn't get stuck if they jump up through the platform and then try to drop
+     *      The player does get stuck if they land on the platform and then try to drop without having gone through it immediately before
+     *      I think the _currentOneWayPlatform reference might be wonky, especially if the player is standing on multiple blocks at once
+     */
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Platform_CollisionEnter");
@@ -31,7 +38,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
         {
             Debug.Log("Platform_CollisionEnter_Ground");
             _currentOneWayPlatform = collision.gameObject;
-            _player.SetIsDropping(false); //player should not drop after hitting another block
+           // _player.SetIsDropping(false); //player should not drop after hitting another block
         }
         
     }
