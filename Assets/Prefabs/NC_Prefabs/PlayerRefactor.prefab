@@ -303,7 +303,7 @@ MonoBehaviour:
   gameInput: {fileID: 0}
   bookwormHoldPoint: {fileID: 2186065082017284005}
   baseMoveSpeed: 7
-  ladderMoveSpeed: 3
+  ladderMoveSpeed: 5
   dropMoveSpeed: 2
   apexHeight: 2
   apexTime: 0.4

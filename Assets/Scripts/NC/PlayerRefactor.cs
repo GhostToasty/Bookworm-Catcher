@@ -56,6 +56,7 @@ public class PlayerRefactor : MonoBehaviour, IBookwormParent
     
     private Bookworm _bookworm;
     private Rigidbody2D _rb;
+    private GameObject _player;
     
     private void Awake()
     {
@@ -133,18 +134,17 @@ public class PlayerRefactor : MonoBehaviour, IBookwormParent
         
         float yVelocity = _jumpVelocity + _verticalVelocity;
         float deltaY = yVelocity * Time.deltaTime;
-
+        
         if (_dropping)
         {
             deltaY = -dropMoveSpeed * gravity * Time.deltaTime;
-            _dropping = false;
+            //_dropping = false;
         }
         
         Vector3 deltaPosition = new Vector3(deltaX, deltaY, 0);
         _rb.MovePosition(transform.position + deltaPosition);
-        
 
-        Debug.Log(_isGrounded);
+        //Debug.Log(_isGrounded);
         ClampPosition();
 
         //---------Moises---------
@@ -168,6 +168,7 @@ public class PlayerRefactor : MonoBehaviour, IBookwormParent
     
     private void GameInput_OnDrop(object sender, EventArgs e)
     {
+        Debug.Log("PlayerRefactor_Dropping");
         _dropping =  true;
     }
 
@@ -183,7 +184,6 @@ public class PlayerRefactor : MonoBehaviour, IBookwormParent
 
     private void GameInput_OnJump(object sender, EventArgs e)
     {
-        Debug.Log("Jump");
         if (_canJump)
         {
             //Debug.Log("Player_Jump");
@@ -229,7 +229,16 @@ public class PlayerRefactor : MonoBehaviour, IBookwormParent
         
         transform.position = clampedPosition;
     }
-    
+
+    public bool IsDropping()
+    {
+        return _dropping;
+    }
+
+    public void SetIsDropping(bool value)
+    {
+        _dropping = value;
+    }
     
     
     

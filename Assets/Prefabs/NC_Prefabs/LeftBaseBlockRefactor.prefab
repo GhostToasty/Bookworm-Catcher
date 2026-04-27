@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 6014610326937984760}
   - component: {fileID: -3220705021067083769}
   - component: {fileID: 7767644678728848193}
+  - component: {fileID: 264216480267900917}
   m_Layer: 6
   m_Name: LeftBaseBlockRefactor
   m_TagString: Untagged
@@ -219,7 +220,7 @@ BoxCollider2D:
   m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.45}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -229,7 +230,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!251 &7767644678728848193
 PlatformEffector2D:
@@ -250,6 +251,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &264216480267900917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4920958026671347910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef748421296f4c94c87f64231db43f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerOneWayPlatform
 --- !u!1 &5600091031696266645
 GameObject:
   m_ObjectHideFlags: 0
