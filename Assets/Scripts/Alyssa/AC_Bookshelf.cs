@@ -8,11 +8,14 @@ public class AC_Bookshelf : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        //checks if the object collision is a boookworm
         if (collision.gameObject.tag == "Bookworm")
         {
+            //grabs renderer of prefab instance and invokes function
             SpriteRenderer spriteRender = gameObject.GetComponentInChildren<SpriteRenderer>();
             OnCollisionWormBookshelf?.Invoke(spriteRender);
             Debug.Log("hit");
+            Debug.Log(gameObject.name);
         }
             
     }

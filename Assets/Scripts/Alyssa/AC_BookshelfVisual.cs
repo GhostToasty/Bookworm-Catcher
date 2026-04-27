@@ -55,10 +55,12 @@ public class AC_BookshelfVisual : MonoBehaviour
     public void OnCollisionWormBookshelf(SpriteRenderer spriteRender)
     {
         Debug.Log("change sprite");
+        //changes sprite after a certain amount of collisions with worm
+        //sprites should change to be slowly eaten books; should match with randomized selected sprite from start 
         switch (state)
         {
             case State.Full:
-                selectedSprite = bookshelfEatenState[3];
+                // selectedSprite = bookshelfEatenState[3];
                 if (wormTouchCount > 10)
                 {
                     wormTouchCount = 0;
