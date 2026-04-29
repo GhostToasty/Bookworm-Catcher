@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="515b1211-564e-4bf5-9b47-24703bcafae7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookworm-Catcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookworm-Catcher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AR-Prefabs/BaseBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AR-Prefabs/BaseBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AR-Prefabs/LadderBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AR-Prefabs/LadderBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AR-Prefabs/LadderBottomBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AR-Prefabs/LadderBottomBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AR-Prefabs/LadderTopBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AR-Prefabs/LadderTopBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AR-Prefabs/LeftBaseBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AR-Prefabs/LeftBaseBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AR-Prefabs/RightBaseBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AR-Prefabs/RightBaseBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AR-Scenes/ARTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AR-Scenes/ARTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AR/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AR/Level1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AR/LevelParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AR/LevelParser.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +113,8 @@
       <workItem from="1776534991258" duration="6276000" />
       <workItem from="1776729667861" duration="4974000" />
       <workItem from="1776818492430" duration="4021000" />
-      <workItem from="1777346171143" duration="7493000" />
+      <workItem from="1777346171143" duration="7618000" />
+      <workItem from="1777425044074" duration="2160000" />
     </task>
     <servers />
   </component>
