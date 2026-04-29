@@ -83,6 +83,7 @@ public class AC_BookshelfVisual : MonoBehaviour
                 selectedSprite = bookshelfEatenState[1];
                 if (wormTouchCount > UnityEngine.Random.Range(3, 6))
                 {
+                    //play crumbs
                     wormTouchCount = 0;
                     state = State.Empty;
                 }
