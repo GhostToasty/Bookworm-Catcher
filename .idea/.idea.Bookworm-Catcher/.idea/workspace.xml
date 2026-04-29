@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="515b1211-564e-4bf5-9b47-24703bcafae7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookworm-Catcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookworm-Catcher/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NC_Prefabs/PlayerRefactor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NC_Prefabs/PlayerRefactor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/NC/NC_WorkingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/NC/NC_WorkingScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/NC/PlayerRefactor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NC/PlayerRefactor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +119,8 @@
       <workItem from="1776534991258" duration="6276000" />
       <workItem from="1776729667861" duration="4974000" />
       <workItem from="1776818492430" duration="4021000" />
-      <workItem from="1777340216316" duration="909000" />
+      <workItem from="1777340216316" duration="1289000" />
+      <workItem from="1777424928668" duration="1997000" />
     </task>
     <servers />
   </component>

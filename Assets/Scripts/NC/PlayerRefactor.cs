@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -48,6 +49,7 @@ public class PlayerRefactor : MonoBehaviour, IBookwormParent
     private bool _canDoubleJump;
     private float _dashTimer;
     private bool _dashActive;
+    private float _dashCooldown = 5.1f;
     private bool _onLadder;
     private bool _dropping;
     
@@ -88,17 +90,25 @@ public class PlayerRefactor : MonoBehaviour, IBookwormParent
     {
         float currentMoveSpeed = baseMoveSpeed;
         //handle dash timer
+        _dashCooldown += Time.deltaTime;
         if (_dashActive)
         {
-            _dashTimer += Time.deltaTime;
-            currentMoveSpeed = 1.5f*baseMoveSpeed; //move twice as fast during dash
-            if (_dashTimer > 2f)
+            if (_dashCooldown > 5f)
             {
-                _dashTimer = 0f;
+                _dashTimer += Time.deltaTime;
+                currentMoveSpeed = 1.5f*baseMoveSpeed; //move twice as fast during dash
+                if (_dashTimer > 2f)
+                {
+                    _dashTimer = 0f;
+                    _dashActive = false;
+                    _dashCooldown = 0f;
+                }
+            }
+            else
+            {
                 _dashActive = false;
             }
         }
-
         //check for on ladder
         _onLadder = Physics2D.CircleCast(transform.position, .05f, Vector2.down, .05f, LayerMask.GetMask("Ladder"));
         //check for on ground/jump capability
@@ -168,6 +178,22 @@ public class PlayerRefactor : MonoBehaviour, IBookwormParent
         else
         {
             _onLadder = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GameObject().GetComponent<Bookworm>() && _bookworm == null)
+        {
+            Bookworm tempWorm =  collision.gameObject.GetComponent<Bookworm>();
+            tempWorm.SetObjectParent(this);
+            SetBookworm(tempWorm);
+        }
+
+        if (collision.GameObject().GetComponent<DepositBox>() && _bookworm != null)
+        {
+            _bookworm.SetObjectParent(collision.GameObject().GetComponent<DepositBox>());
+            ClearBookworm();
         }
     }
     
