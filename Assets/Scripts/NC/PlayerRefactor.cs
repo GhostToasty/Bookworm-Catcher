@@ -19,6 +19,7 @@ public class PlayerRefactor : MonoBehaviour, IBookwormParent
     [SerializeField] private float apexTime = .05f;
     //boundaries for player
     [SerializeField] private float groundLevel;
+    [SerializeField] private float ceilingLevel;
     [SerializeField] private float leftWall = -9f;
     [SerializeField] private float rightWall = 9f;
 
@@ -247,13 +248,16 @@ public class PlayerRefactor : MonoBehaviour, IBookwormParent
         {
             clampedPosition.y = groundLevel;
         }
+        else if (transform.position.y > ceilingLevel)
+        {
+            clampedPosition.y = ceilingLevel;
+        }
 
         if (transform.position.x < leftWall)
         {
             clampedPosition.x = leftWall;
         }
-
-        if (transform.position.x > rightWall)
+        else if (transform.position.x > rightWall)
         {
             clampedPosition.x = rightWall;
         }

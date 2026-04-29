@@ -365,13 +365,14 @@ MonoBehaviour:
   gameInput: {fileID: 0}
   bookwormHoldPoint: {fileID: 0}
   baseMoveSpeed: 7
-  ladderMoveSpeed: 2
+  ladderMoveSpeed: 5
   dropMoveSpeed: 2
-  apexHeight: 0.5
-  apexTime: 0.05
-  groundLevel: 0
-  leftWall: -9
-  rightWall: 9
+  apexHeight: 4
+  apexTime: 0.5
+  groundLevel: 6
+  ceilingLevel: 40
+  leftWall: 0.5
+  rightWall: 41.5
 --- !u!1 &8332108810703377589
 GameObject:
   m_ObjectHideFlags: 0
