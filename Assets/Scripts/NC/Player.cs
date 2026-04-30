@@ -156,7 +156,7 @@ public class Player : MonoBehaviour, IBookwormParent
         
         transform.position += new Vector3(deltaX, deltaY, 0);
 
-        Debug.Log(_isGrounded);
+        //Debug.Log(_isGrounded);
         ClampPosition();
 
         //---------Moises---------
@@ -320,7 +320,7 @@ public class Player : MonoBehaviour, IBookwormParent
             currentState = State.Idle;
         }
 
-        Debug.Log("Current State: " + currentState);
+        //Debug.Log("Current State: " + currentState);
     }
 
     public bool isWalking()

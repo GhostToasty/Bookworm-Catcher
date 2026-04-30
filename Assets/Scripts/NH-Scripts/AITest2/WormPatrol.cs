@@ -239,4 +239,11 @@ public class WormPatrol : MonoBehaviour
             touchingPlayer = false;
         }
     }
+
+    //------Moises-------
+    public StateMachine GetState()
+    {
+        return currentState;
+    }
+    //--------------------
 }
