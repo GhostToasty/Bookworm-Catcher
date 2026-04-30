@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8132028801937259144}
   - component: {fileID: 2943942477464954623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundFloorCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2493526365167750966}
   - component: {fileID: 2494906402326696134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundFloorCeilingVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

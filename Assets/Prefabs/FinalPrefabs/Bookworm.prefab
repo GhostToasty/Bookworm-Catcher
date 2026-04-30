@@ -123,7 +123,7 @@ MonoBehaviour:
   ladderLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  playerGameObject: {fileID: 1792990888630517839, guid: dd56f41421f6a9844b6e5965664a7083, type: 3}
+  playerGameObject: {fileID: 7135887414987808262, guid: 76a088a1d98eaee44bc7f0ab625acbc6, type: 3}
   currentState: 0
 --- !u!114 &1971030556937967508
 MonoBehaviour:

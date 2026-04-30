@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2776a4b774c06604287a8f05094fbec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AC_PlayerAnimation
+  player: {fileID: 8870077666049657432}
   animator: {fileID: 2225439702497066304}
 --- !u!1 &8332108810703377589
 GameObject:

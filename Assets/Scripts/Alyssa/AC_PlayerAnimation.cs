@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class AC_PlayerAnimation : MonoBehaviour
 {
+    [SerializeField] private Player player;
     [SerializeField] private Animator animator;
     private string currentAnim;
 
@@ -14,28 +15,46 @@ public class AC_PlayerAnimation : MonoBehaviour
     }
     
 
-    void Update()
+    void FixedUpdate()
     {
-        if (Keyboard.current.wKey.wasPressedThisFrame)
-        {
-            SwitchAnimation("FacingBack");
-        }
-            
-        if (Keyboard.current.sKey.wasPressedThisFrame)
-        {
-            SwitchAnimation("FacingFront");
-        }
-            
-        if (Keyboard.current.aKey.wasPressedThisFrame)
-        {
-            SwitchAnimation("FacingLeft");
-        }
-            
-        if (Keyboard.current.dKey.wasPressedThisFrame)
-        {
-            SwitchAnimation("FacingRight");
-        }
-            
+        // if(player.GetState() == Player.State.Moving)
+        // {        
+        //     if (Keyboard.current.wKey.wasPressedThisFrame)
+        //     {
+        //         SwitchAnimation("FacingBack");
+        //     }
+                
+        //     if (Keyboard.current.sKey.wasPressedThisFrame)
+        //     {
+        //         SwitchAnimation("FacingFront");
+        //     }
+        // }
+        
+        // else
+        // {
+            if (Keyboard.current.wKey.wasPressedThisFrame)
+            {
+                SwitchAnimation("FacingBack");
+            }
+                
+            if (Keyboard.current.sKey.wasPressedThisFrame)
+            {
+                SwitchAnimation("FacingFront");
+            }
+                
+            if (Keyboard.current.aKey.wasPressedThisFrame)
+            {
+                SwitchAnimation("FacingLeft");
+            }
+                
+            if (Keyboard.current.dKey.wasPressedThisFrame)
+            {
+                SwitchAnimation("FacingRight");
+            }
+        // }
+
+        
+                
     }
 
     private void SwitchAnimation(string newAnim)
