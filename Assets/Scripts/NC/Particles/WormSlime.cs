@@ -10,7 +10,7 @@ public class WormSlime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Worm State: " + bookworm.GetState());
+        //Debug.Log("Worm State: " + bookworm.GetState());
         if (!detachedSlime && bookworm != null && bookworm.GetState() == WormPatrol.StateMachine.Caught)
         {
             detachedSlime = true;
