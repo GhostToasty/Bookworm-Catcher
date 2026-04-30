@@ -107,7 +107,7 @@ public class WormPatrol : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            touchingPlayer = false;
+            //touchingPlayer = false;
         }
     }
 
