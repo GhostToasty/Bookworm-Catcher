@@ -115,5 +115,11 @@ public class LevelParser : MonoBehaviour
         }
 
         Debug.Log(wormCount + " worms loaded");
+
+        ScoreSystem scoreSystem = ScoreSystem.Instance != null ? ScoreSystem.Instance : FindFirstObjectByType<ScoreSystem>();
+        if (scoreSystem != null)
+        {
+            scoreSystem.SetWormCount(wormCount);
+        }
     }
 }
