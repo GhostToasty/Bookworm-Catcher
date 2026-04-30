@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="515b1211-564e-4bf5-9b47-24703bcafae7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookworm-Catcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookworm-Catcher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/BaseBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/BaseBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/Bookworm.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/Bookworm.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/LadderBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/LadderBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/LadderBottomBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/LadderBottomBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/LadderTopBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/LadderTopBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/LeftBaseBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/LeftBaseBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/RightBaseBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FinalPrefabsOld/RightBaseBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalGame/Level1_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FinalGame/Level1_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalGame/Level1_Scene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FinalGame/Level1_Scene.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AR/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AR/Level1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AR/LevelParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AR/LevelParser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NH-Scripts/AITest2/WormPatrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NH-Scripts/AITest2/WormPatrol.cs" afterDir="false" />
-    </list>
+    <list default="true" id="515b1211-564e-4bf5-9b47-24703bcafae7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -433,19 +433,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7166876e82c4cc4599ab4a9dfd6fb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameTimer
-  startTimeSeconds: 5
+  startTimeSeconds: 60
   timerText: {fileID: 1818209834}
   timerPrefix: 'TIME LEFT: '
-  gameOverScreen: {fileID: 1992858263}
+  gameOverScreen: {fileID: 144238348}
   filledStars:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   pointsToPass: 100
-  winTitleImage: {fileID: 0}
-  gameOverTitleImage: {fileID: 0}
-  gameOverScoreText: {fileID: 0}
-  highScoreText: {fileID: 0}
+  winTitleImage: {fileID: 1635571831}
+  gameOverTitleImage: {fileID: 700750634}
+  gameOverScoreText: {fileID: 1788958924}
+  highScoreText: {fileID: 186914127}
   gameOverScorePrefix: 'YOUR SCORE: '
   highScorePrefix: 'HIGH SCORE: '
 --- !u!4 &118340181
@@ -784,9 +784,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
-        m_MethodName: BackToPausedGame
+      - m_Target: {fileID: 246968669}
+        m_TargetAssemblyTypeName: PausedMenu, Assembly-CSharp
+        m_MethodName: OpenSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -847,6 +847,7 @@ GameObject:
   - component: {fileID: 246968664}
   - component: {fileID: 246968667}
   - component: {fileID: 246968668}
+  - component: {fileID: 246968669}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -991,6 +992,21 @@ MonoBehaviour:
   xMax: 24.2
   yMin: 14
   yMax: 33
+--- !u!114 &246968669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246968663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1706e10599371cc47b127a4bb36a82bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PausedMenu
+  pausedMenu: {fileID: 1986281702}
+  mainMenuSceneIndex: 0
+  optionsSceneIndex: 8
 --- !u!1 &258076151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,9 +1090,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 246968669}
         m_TargetAssemblyTypeName: PausedMenu, Assembly-CSharp
-        m_MethodName: OpenMainMenu
+        m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1549,7 +1565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.49019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7647059}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1734,7 +1750,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 246968669}
         m_TargetAssemblyTypeName: PausedMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -3649,7 +3665,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 246968669}
         m_TargetAssemblyTypeName: PausedMenu, Assembly-CSharp
         m_MethodName: OpenMainMenu
         m_Mode: 1
@@ -3962,7 +3978,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 246968669}
         m_TargetAssemblyTypeName: PausedMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -4081,6 +4097,8 @@ MonoBehaviour:
   basePrefab: {fileID: 4920958026671347910, guid: 9ffda563c37143c4f9176113490264a4, type: 3}
   leftBasePrefab: {fileID: 4920958026671347910, guid: 06a7d72bbb17fb74b8869e262111d2e7, type: 3}
   rightBasePrefab: {fileID: 4920958026671347910, guid: fbe4908f10cff1143a0897619fdb15ee, type: 3}
+  groundFloorPrefab: {fileID: 4776090391161443999, guid: 71e723d9b1a693a4abbcf602df1b2a8e, type: 3}
+  levelFloorPrefab: {fileID: 1172441657127778903, guid: d833f26de00ef994fb1a431888dc41b9, type: 3}
   ladderPrefab: {fileID: 4920958026671347910, guid: 1c20a0845e9a961429a07aca72dbace0, type: 3}
   ladderTopPrefab: {fileID: 4920958026671347910, guid: 555783ff179f6174380b8d8e596ca0c0, type: 3}
   ladderBottomPrefab: {fileID: 4920958026671347910, guid: d7cf92186543fb744928ffa7433d5740, type: 3}
@@ -4184,7 +4202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 246968669}
         m_TargetAssemblyTypeName: PausedMenu, Assembly-CSharp
         m_MethodName: OpenMainMenu
         m_Mode: 1
@@ -5429,8 +5447,8 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -150, y: -52.5}
-  m_SizeDelta: {x: 235.79517, y: 50}
-  m_Pivot: {x: 1, y: 1}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818209834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6095,7 +6113,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 246968669}
         m_TargetAssemblyTypeName: PausedMenu, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
