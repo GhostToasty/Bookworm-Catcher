@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[DefaultExecutionOrder(100)]
 public class PausedMenu : MonoBehaviour
 {
     public static bool ReturnToPausedStateOnLoad { get; set; }
@@ -24,6 +25,7 @@ public class PausedMenu : MonoBehaviour
 
                 pauseContainer.SetActive(true);
                 Time.timeScale = 0f;
+                AudioListener.pause = true;
             }
         }
     }

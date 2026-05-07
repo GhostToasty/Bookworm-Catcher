@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 
+[DefaultExecutionOrder(-50)]
 public class GameTimer : MonoBehaviour
 {
     private const string HighScoreKey = "HighScore";
@@ -25,7 +26,10 @@ public class GameTimer : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 1f;
+        // PausedMenu may run after this (later execution order) and set timeScale to 0
+        // when returning from the pause submenu; avoid undoing that here.
+        if (!PausedMenu.ReturnToPausedStateOnLoad)
+            Time.timeScale = 1f;
         _timeRemaining = startTimeSeconds;
 
         ResolveEndTitles();

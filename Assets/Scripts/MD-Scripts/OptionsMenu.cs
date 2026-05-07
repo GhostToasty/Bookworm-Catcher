@@ -77,7 +77,6 @@ public class OptionsMenu : MonoBehaviour
     // Use this for the Options button opened from Pause Menu.
     public void BackToPausedGame()
     {
-        Time.timeScale = 1f;
         PausedMenu.ReturnToPausedStateOnLoad = true;
 
         int targetScene = s_returnGameplaySceneIndex >= 0 ? s_returnGameplaySceneIndex : gameplaySceneIndex;
