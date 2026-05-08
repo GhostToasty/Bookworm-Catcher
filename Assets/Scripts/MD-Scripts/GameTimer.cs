@@ -1,10 +1,11 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-50)]
 public class GameTimer : MonoBehaviour
 {
-    private const string HighScoreKey = "HighScore";
+    private const string HighScoreKeyPrefix = "HighScore_Level_";
     private const int PointsPerSec = 50;
 
     [SerializeField] private float startTimeSeconds = 60f;
@@ -40,6 +41,20 @@ public class GameTimer : MonoBehaviour
 
         if (gameOverScreen) gameOverScreen.SetActive(false);
         UpdateTimerText();
+        RefreshHighScoreDisplay();
+    }
+
+    private static string HighScorePrefsKeyForCurrentScene()
+    {
+        return HighScoreKeyPrefix + SceneManager.GetActiveScene().buildIndex;
+    }
+
+    private void RefreshHighScoreDisplay()
+    {
+        if (highScoreText == null)
+            return;
+        int high = PlayerPrefs.GetInt(HighScorePrefsKeyForCurrentScene(), 0);
+        highScoreText.SetText($"HIGH SCORE: {high:D5}");
     }
 
     private void Update()
@@ -98,10 +113,16 @@ public class GameTimer : MonoBehaviour
     private int CalculateFinalScore(bool won)
     {
         if (Score == null) return 0;
-        
-        int timeBonus = won ? Mathf.FloorToInt(Mathf.Max(0, _timeRemaining)) * PointsPerSec : 0;
-        if (timeBonus > 0) Score.AddPoints(timeBonus);
-        
+
+        // Match timer UI: each full second shown as remaining is worth PointsPerSec (50).
+        if (!won)
+            return Score.Score;
+
+        int secondsLeft = Mathf.CeilToInt(Mathf.Max(0f, _timeRemaining));
+        int timeBonus = secondsLeft * PointsPerSec;
+        if (timeBonus > 0)
+            Score.AddPoints(timeBonus);
+
         return Score.Score;
     }
 
@@ -128,11 +149,12 @@ public class GameTimer : MonoBehaviour
 
     private void HandleHighscore(int currentScore)
     {
-        int high = PlayerPrefs.GetInt(HighScoreKey, 0);
+        string key = HighScorePrefsKeyForCurrentScene();
+        int high = PlayerPrefs.GetInt(key, 0);
         if (currentScore > high)
         {
             high = currentScore;
-            PlayerPrefs.SetInt(HighScoreKey, high);
+            PlayerPrefs.SetInt(key, high);
             PlayerPrefs.Save();
         }
         highScoreText?.SetText($"HIGH SCORE: {high:D5}");
